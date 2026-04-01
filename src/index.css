@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Manrope', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #0f172a;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 8% -8%, rgba(20, 184, 166, 0.23), transparent 38%),
+    radial-gradient(circle at 92% 0%, rgba(59, 130, 246, 0.2), transparent 30%),
+    linear-gradient(180deg, #f8fafc 0%, #edf2ff 55%, #f8fafc 100%);
+  color: #0f172a;
+  background-attachment: fixed;
+}
+
+html.dark body {
+  background:
+    radial-gradient(circle at 15% -10%, rgba(20, 184, 166, 0.2), transparent 34%),
+    radial-gradient(circle at 88% -5%, rgba(59, 130, 246, 0.15), transparent 32%),
+    linear-gradient(180deg, #0a1220 0%, #0f172a 55%, #0a1220 100%);
+  color: #e2e8f0;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.dashboard-shell {
+  position: relative;
+  overflow: hidden;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.75)),
+    repeating-linear-gradient(
+      60deg,
+      rgba(148, 163, 184, 0.08),
+      rgba(148, 163, 184, 0.08) 1px,
+      transparent 1px,
+      transparent 18px
+    );
+  backdrop-filter: blur(10px);
+  box-shadow: 0 16px 35px rgba(15, 23, 42, 0.08);
+}
+
+.dashboard-shell::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(110deg, rgba(255, 255, 255, 0.25), transparent 30%, transparent 70%, rgba(59, 130, 246, 0.08));
+}
+
+html.dark .dashboard-shell {
+  background-image:
+    linear-gradient(to right, rgba(15, 23, 42, 0.83), rgba(15, 23, 42, 0.72)),
+    repeating-linear-gradient(
+      60deg,
+      rgba(148, 163, 184, 0.15),
+      rgba(148, 163, 184, 0.15) 1px,
+      transparent 1px,
+      transparent 18px
+    );
+  box-shadow: 0 16px 35px rgba(2, 6, 23, 0.45);
+}
+
+.dashboard-kicker {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.dashboard-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1.95rem, 4.2vw, 2.7rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+
+.dashboard-subtitle {
+  font-size: clamp(0.93rem, 2vw, 1.02rem);
+  line-height: 1.55;
+}
